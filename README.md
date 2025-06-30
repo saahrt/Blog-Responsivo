@@ -1,6 +1,6 @@
 # The Dev News - Blog Responsivo
 
-Projeto de blog responsivo criado para o desafio da DNC Interactive, com foco em técnicas modernas de layout e boas práticas de desenvolvimento front-end.
+Projeto de blog responsivo criado para a prova de Programação Web I, com foco em técnicas modernas de layout e boas práticas de desenvolvimento front-end.
 
 ## Tecnologias utilizadas
 
@@ -30,11 +30,5 @@ Projeto de blog responsivo criado para o desafio da DNC Interactive, com foco em
 - O projeto utiliza `normalize.css` para garantir consistência entre navegadores.
 - Todos os estilos estão no arquivo `style.css` para facilitar manutenção.
 - O layout foi planejado para manter a integridade visual em múltiplos dispositivos.
-
-## Autor
-
-Fábio Testsuo
-
----
 
 Este projeto foi desenvolvido para aprimorar habilidades em design responsivo e práticas modernas de CSS e HTML.

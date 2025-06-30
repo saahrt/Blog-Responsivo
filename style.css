@@ -1,0 +1,237 @@
+/*  
+/// The Dev News Blog - v1.0
+/// Blog responsivo com layout flexbox e grid.
+/// Layout baseado em projeto educacional.
+*/
+
+@import "../node_modules/normalize.css/normalize.css";
+
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --primary-color: #02A28F;
+  --accent-color: #02A28F;
+  --card-bg: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* Header e footer */
+header.barra,
+footer.barra {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 1rem;
+  border-radius: 0;
+}
+
+/* Texto footer centralizado */
+footer.barra {
+  text-align: center;
+}
+
+/* Outras barras (h2.barra, linha-posts) */
+h2.barra,
+.linha-posts {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 1rem;
+  text-align: left;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+aside section > h2.barra {
+  font-size: 1.4rem;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: left;
+}
+
+/* Posts recententes (c display flex p alinhamento) */
+.linha-posts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Seção inicial (c background e overlay) */
+#inicial {
+  position: relative;
+  height: 300px;
+  background-image: url('./img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Overlay fraquinho cobrindo toda a imagem */
+#inicial::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15); /* fraquinho */
+  z-index: 0;
+}
+
+/* Bloco texto inicial */
+#inicial .texto-inicial {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  text-align: left;
+  color: white;
+}
+
+/* Tipografia do B.Ini */
+#inicial h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+#inicial .categoria {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.autor {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
+/* Main e Aside */
+main {
+  flex: 3;
+  min-width: 300px;
+}
+
+aside {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Posts populares empilhados verticalmente e espaçamento*/
+aside section:first-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Grid dos cards principais 2x2 */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cards */
+.cards {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.cards img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+}
+
+/* Tipografia */
+h1, h2, h3, h4 {
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+main section a {
+  font-size: 0.9rem;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  main, aside {
+    width: 100%;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .cards {
+    padding: 0.75rem;
+  }
+
+  #inicial {
+    height: 200px;
+  }
+
+  #inicial .texto-inicial {
+    bottom: 10px;
+    left: 10px;
+  }
+}
